@@ -1,0 +1,356 @@
+/* Variáveis de Cor (para fácil modificação) */
+:root {
+    --cor-turquesa-principal: #4FC0B9;
+    --cor-roxo-principal: #7B509E;
+    --cor-texto-escuro: #333333;
+    --cor-fundo-claro: #F8F8F8;
+    --cor-fundo-secao-clara: #FBFBFB;
+    --cor-borda-cinza: #DDDDDD;
+    --cor-destaque-amarelo: #FFD700; /* Para hover ou pequenos destaques */
+    --cor-texto-claro: #FFFFFF;
+}
+
+/* Estilos Gerais */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-fundo-claro);
+}
+
+.container {
+    width: 85%; /* Um pouco mais largo para melhor uso do espaço */
+    max-width: 1200px; /* Limite máximo para não ficar muito esticado em telas grandes */
+    margin: auto;
+    overflow: hidden; /* Limpa floats */
+    padding: 20px 0;
+}
+
+/* Cabeçalho */
+header {
+    background: var(--cor-turquesa-principal); /* Turquesa principal */
+    color: var(--cor-texto-claro);
+    padding-top: 15px;
+    min-height: 75px;
+    border-bottom: var(--cor-roxo-principal) 4px solid; /* Borda roxa */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 18px;
+}
+
+header a {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: var(--cor-destaque-amarelo); /* Amarelo dourado no hover */
+    font-weight: bold;
+}
+
+/* Seção Hero (Sobre Mim na Home) */
+.hero {
+    min-height: 450px;
+    background: var(--cor-fundo-secao-clara); /* Fundo branco suave */
+    text-align: center;
+    padding: 60px 0;
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05);
+}
+
+.hero .profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Faz a imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    margin-bottom: 25px;
+    border: 6px solid var(--cor-turquesa-principal); /* Borda turquesa */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.hero h2 {
+    font-size: 40px;
+    color: var(--cor-roxo-principal); /* Roxo principal */
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 19px;
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--cor-roxo-principal); /* Roxo principal para botões */
+    color: var(--cor-texto-claro);
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 19px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: darken(var(--cor-roxo-principal), 10%); /* Uma versão um pouco mais escura do roxo */
+    transform: translateY(-2px);
+}
+
+/* Seção de Serviços */
+.services {
+    padding: 50px 0;
+    background: var(--cor-fundo-claro);
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 36px;
+    color: var(--cor-turquesa-principal); /* Turquesa principal */
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.service-grid {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem linha */
+    justify-content: center;
+    gap: 25px; /* Espaço entre os itens */
+}
+
+.service-item {
+    background: var(--cor-fundo-secao-clara); /* Fundo suave para os itens */
+    border: 1px solid var(--cor-borda-cinza);
+    padding: 25px;
+    border-radius: 10px;
+    width: calc(33% - 50px); /* 3 itens por linha, considerando o gap */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left; /* Alinha texto dentro do item */
+}
+
+.service-item:hover {
+    transform: translateY(-8px); /* Efeito de elevação no hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-item h3 {
+    color: var(--cor-roxo-principal); /* Roxo principal */
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.service-item p {
+    font-size: 17px;
+    color: var(--cor-texto-escuro);
+}
+
+/* Seção de Contato */
+.contact {
+    padding: 50px 0;
+    background: var(--cor-turquesa-principal); /* Turquesa principal */
+    color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.contact p {
+    font-size: 19px;
+    margin-bottom: 15px;
+}
+
+.contact .social-link {
+    color: var(--cor-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 19px;
+    transition: color 0.3s ease;
+}
+
+.contact .social-link:hover {
+    color: var(--cor-destaque-amarelo);
+}
+
+/* Rodapé */
+footer {
+    background: var(--cor-roxo-principal); /* Roxo principal para o rodapé */
+    color: var(--cor-texto-claro);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 15px;
+}
+
+/* Estilo para a página "Quem Somos" (about_page) */
+.about-page {
+    padding: 60px 0;
+    background-color: var(--cor-fundo-secao-clara);
+    text-align: center;
+    box-shadow: inset 0 -5px 10px rgba(0,0,0,0.05);
+}
+
+.about-page h2 {
+    color: var(--cor-turquesa-principal);
+    font-size: 40px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.about-page h3 {
+    color: var(--cor-roxo-principal);
+    font-size: 30px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.about-page h4 {
+    color: var(--cor-turquesa-principal);
+    font-size: 24px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.about-page p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    line-height: 1.8;
+    text-align: justify;
+    color: var(--cor-texto-escuro);
+}
+
+.about-page ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 25px auto 35px auto;
+    text-align: left;
+}
+
+.about-page ul li {
+    background-color: lighten(var(--cor-turquesa-principal), 40%); /* Turquesa bem claro */
+    margin-bottom: 12px;
+    padding: 15px 20px;
+    border-left: 6px solid var(--cor-turquesa-principal);
+    border-radius: 8px;
+    font-size: 17px;
+    color: var(--cor-texto-escuro);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.about-page .profile-pic-large {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center; /* <<< Mude 'center' para o valor desejado (ex: top, bottom, 50% 20%) */
+    margin: 25px auto 35px auto;
+    display: block;
+    border: 8px solid var(--cor-roxo-principal);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+}
+
+.about-page .cta-text {
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 45px;
+    margin-bottom: 35px;
+    color: var(--cor-texto-escuro);
+    text-align: center;
+    font-weight: 500;
+}
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+    .service-item {
+        width: calc(50% - 40px); /* 2 itens por linha em telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    header h1, header nav {
+        float: none;
+        text-align: center;
+    }
+
+    header nav ul {
+        padding-top: 15px;
+    }
+
+    header nav li {
+        display: block;
+        padding: 8px 0;
+    }
+
+    .hero h2, .services h2, .contact h2, .about-page h2 {
+        font-size: 32px;
+    }
+
+    .hero p, .contact p, .about-page p {
+        font-size: 17px;
+    }
+
+    .service-item {
+        width: calc(100% - 40px); /* 1 item por linha em telas menores */
+    }
+
+    .about-page p, .about-page ul {
+        text-align: left; /* Alinha parágrafos e listas à esquerda em telas pequenas */
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .about-page .profile-pic-large {
+        width: 180px;
+        height: 180px;
+        border: 6px solid var(--cor-roxo-principal);
+    }
+}
+
+/* Função darken (para uso em hover) - Isso é CSS puro, não SASS/LESS */
+/* Nota: 'darken' não é uma função nativa do CSS. Abaixo, estou usando um valor fixo. */
+/* Se quiser um escurecimento mais dinâmico, precisaria de pré-processadores CSS ou JavaScript. */
+/* Para este exemplo, o valor de darken(var(--cor-roxo-principal), 10%) foi substituído por um hexcode fixo */
+.btn:hover {
+    background: #6a4087; /* Versão um pouco mais escura do roxo #7B509E */
+    transform: translateY(-2px);
+}
